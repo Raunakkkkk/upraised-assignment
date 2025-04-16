@@ -64,15 +64,107 @@ src/ ├── controllers/ │ └── gadgetController.js # Handles gadget-r
 
 ---
 
-## 🧪 Run Tests
+## Endpoints
 
-Run all unit and integration tests:
+### 1. **List Gadgets**
+   - **Endpoint**: `GET /gadgets?status=...`
+   - **Description**: Fetch a list of gadgets filtered by status. Each gadget includes a random mission success probability.
+   - **Query Parameters**:
+     - `status` (optional): Filter gadgets by status (e.g., `Available`, `Deployed`, etc.).
+   - **Response**:
+     ```json
+     [
+       {
+         "_id": "12345",
+         "name": "The Nightingale",
+         "status": "Available",
+         "missionSuccess": "78%"
+       }
+     ]
+     ```
 
-```bash
-npm run test
-```
+### 2. **Create Gadget**
+   - **Endpoint**: `POST /gadgets`
+   - **Description**: Create a new gadget with a unique codename and status.
+   - **Request Body**:
+     ```json
+     {
+       "status": "Available"
+     }
+     ```
+   - **Response**:
+     ```json
+     {
+       "_id": "12345",
+       "name": "The Kraken",
+       "status": "Available"
+     }
+     ```
 
-> Tests cover creation, update, self-destruct, and decommission logic using **Jest** and **Supertest**.
+### 3. **Update Gadget**
+   - **Endpoint**: `PATCH /gadgets/:id`
+   - **Description**: Update gadget details by ID.
+   - **Request Body**:
+     ```json
+     {
+       "status": "Deployed"
+     }
+     ```
+   - **Response**:
+     ```json
+     {
+       "_id": "12345",
+       "name": "The Kraken",
+       "status": "Deployed"
+     }
+     ```
+
+### 4. **Decommission Gadget**
+   - **Endpoint**: `DELETE /gadgets/:id`
+   - **Description**: Mark a gadget as "Decommissioned" and record the decommission date.
+   - **Response**:
+     ```json
+     {
+       "_id": "12345",
+       "name": "The Kraken",
+       "status": "Decommissioned",
+       "decommissionedAt": "2025-04-16T12:00:00.000Z"
+     }
+     ```
+
+### 5. **Self-Destruct Gadget**
+   - **Endpoint**: `POST /gadgets/:id/self-destruct`
+   - **Description**: Initiate a two-step self-destruct sequence for a gadget.
+   - **Step 1**: Generate and return a confirmation code.
+     - **Request Body**:
+       ```json
+       {}
+       ```
+     - **Response**:
+       ```json
+       {
+         "message": "Confirmation code generated",
+         "confirmationCode": "123456"
+       }
+       ```
+   - **Step 2**: Confirm the code to destroy the gadget.
+     - **Request Body**:
+       ```json
+       {
+         "confirmationCode": "123456"
+       }
+       ```
+     - **Response**:
+       ```json
+       {
+         "message": "Gadget self destructed",
+         "gadget": {
+           "_id": "12345",
+           "name": "The Kraken",
+           "status": "Destroyed"
+         }
+       }
+       ```
 
 ---
 
