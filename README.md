@@ -50,7 +50,6 @@ project-root/
 ├── README.md                       # Project documentation
 └── node_modules/                   # Installed dependencies
 
----
 
 
 ## 🔗 API Endpoints
