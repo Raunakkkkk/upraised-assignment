@@ -1,4 +1,3 @@
-// src/controllers/gadgetsController.js
 const Gadget = require("../models/Gadget");
 
 // some codenames to pick from

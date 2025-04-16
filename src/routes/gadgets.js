@@ -1,4 +1,3 @@
-// src/routes/gadgets.js
 const router = require("express").Router();
 const gc = require("../controllers/gadgetController");
 // list + filter
