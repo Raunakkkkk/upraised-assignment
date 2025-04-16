@@ -37,34 +37,8 @@ src/ ├── controllers/ │ └── gadgetController.js # Handles gadget-r
 
 ---
 
-## 📦 Installation & Setup
 
-1. **Clone the repository**  
-   ```bash
-   git clone https://github.com/Raunakkkkk/upraised-assignment.git
-   cd upraised-assignment
-   ```
-
-2. **Install dependencies**  
-   ```bash
-   npm install
-   ```
-
-3. **Setup environment variables**  
-   Create a `.env` file in the root with:
-   ```
-   MONGO_URI=your_mongodb_uri
-   PORT=3000
-   ```
-
-4. **Start the development server**  
-   ```bash
-   npm run dev
-   ```
-
----
-
-## Endpoints
+## 🔗 API Endpoints
 
 ### 1. **List Gadgets**
    - **Endpoint**: `GET /gadgets?status=...`
@@ -167,121 +141,33 @@ src/ ├── controllers/ │ └── gadgetController.js # Handles gadget-r
        ```
 
 ---
+## 📦 Installation & Setup
 
-## 🔗 API Endpoints
+1. **Clone the repository**  
+   ```bash
+   git clone https://github.com/Raunakkkkk/upraised-assignment.git
+   cd upraised-assignment
+   ```
 
-### ✅ `GET /gadgets`
-- Returns a list of all gadgets
-- Optional query: `status=Available`
+2. **Install dependencies**  
+   ```bash
+   npm install
+   ```
 
-**Response:**
-```json
-[
-  {
-    "_id": "gadget_id",
-    "name": "The Phantom",
-    "status": "Available",
-    "missionSuccess": "75%"
-  }
-]
-```
+3. **Setup environment variables**  
+   Create a `.env` file in the root with:
+   ```
+   MONGO_URI=your_mongodb_uri
+   PORT=3000
+   ```
 
----
-
-### ➕ `POST /gadgets`
-- Add a new gadget
-- Only provide the `status`
-- A unique codename is auto-generated
-
-**Request:**
-```json
-{
-  "status": "Deployed"
-}
-```
-
-**Response:**
-```json
-{
-  "_id": "gadget_id",
-  "name": "The Kraken",
-  "status": "Deployed"
-}
-```
+4. **Start the development server**  
+   ```bash
+   npm run dev
+   ```
 
 ---
 
-### ✏️ `PATCH /gadgets/:id`
-- Update gadget properties (like name or status)
-
-**Request:**
-```json
-{
-  "name": "The Viper"
-}
-```
-
-**Response:**
-```json
-{
-  "_id": "gadget_id",
-  "name": "The Viper",
-  "status": "Available"
-}
-```
-
----
-
-### ❌ `DELETE /gadgets/:id`
-- Soft delete a gadget (marks as `Decommissioned`)
-- Adds a `decommissionedAt` timestamp
-
-**Response:**
-```json
-{
-  "status": "Decommissioned",
-  "decommissionedAt": "2025-04-16T12:34:56Z"
-}
-```
-
----
-
-### 💣 `POST /gadgets/:id/self-destruct`
-
-#### Step 1 – Generate confirmation code
-**Request:**  
-```json
-POST /gadgets/:id/self-destruct
-```
-
-**Response:**
-```json
-{
-  "message": "Confirmation code generated (simulate delivery)",
-  "confirmationCode": "123456"
-}
-```
-
-#### Step 2 – Confirm destruction
-**Request:**
-```json
-POST /gadgets/:id/self-destruct
-{
-  "confirmationCode": "123456"
-}
-```
-
-**Response:**
-```json
-{
-  "message": "Gadget self destructed",
-  "gadget": {
-    "status": "Destroyed"
-  }
-}
-```
-
----
 
 ## 👨‍💻 Author
 
