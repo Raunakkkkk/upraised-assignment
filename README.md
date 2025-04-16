@@ -32,24 +32,23 @@ This is a backend assignment project built for Upraised.
 project-root/
 ├── src/
 │   ├── controllers/
-│   │   ├── gadgetController.js   # Handles gadget-related API logic
-│   │   └── authController.js     # Handles user authentication (register/login)
+│   │   ├── authController.js       # Handles user authentication (register/login)
+│   │   └── gadgetController.js     # Handles gadget-related API logic
 │   ├── models/
-│   │   ├── Gadget.js             # Gadget schema and model
-│   │   └── User.js               # User schema and model
+│   │   ├── User.js                 # User schema and model
+│   │   └── Gadget.js               # Gadget schema and model
 │   ├── routes/
-│   │   ├── gadgetRoutes.js       # API routes for gadgets
-│   │   └── authRoutes.js         # API routes for authentication
-│   ├── middlewares/
-│   │   └── errorHandler.js       # Global error handling middleware
-│   ├── utils/
-│   │   └── index.js              # Utility functions
-│   └── app.js                    # Main application entry point
-├── .env                          # Environment variables (e.g., JWT_SECRET, DB connection)
-├── package.json                  # Project dependencies and scripts
-├── README.md                     # Project documentation
-└── node_modules/                 # Installed dependencies
-```
+│   │   ├── auth.js                 # API routes for authentication
+│   │   └── gadgets.js              # API routes for gadgets
+│   ├── middleware/
+│   │   └── authMiddleware.js       # Middleware for authentication
+│   ├── connectDB.js                # MongoDB connection logic
+│   ├── app.js                      # Main application entry point
+│   └── .env                        # Environment variables (e.g., JWT_SECRET, DB connection)
+├── .gitignore                      # Files and folders to ignore in Git
+├── package.json                    # Project dependencies and scripts
+├── README.md                       # Project documentation
+└── node_modules/                   # Installed dependencies
 
 ---
 
