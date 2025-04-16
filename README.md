@@ -1,6 +1,6 @@
 # 🕵️ IMF Gadget API — Backend Assignment
 
-This is a backend assignment project built for Upraised, simulating an API used by the **IMF (Impossible Mission Force)** to manage secret agent gadgets. It provides RESTful endpoints to create, update, and manage spy gadgets, including features like self-destruct with a confirmation code.
+This is a backend assignment project built for Upraised.
 
 ---
 
@@ -21,8 +21,7 @@ This is a backend assignment project built for Upraised, simulating an API used 
 - **Express.js** – Web framework
 - **MongoDB** – NoSQL database
 - **Mongoose** – MongoDB ODM
-- **Jest** + **Supertest** – Testing framework
-- **Render** – Deployment platform
+- **Postman** - API Testing
 - **Git** + **GitHub** – Version control
 
 ---
@@ -30,18 +29,9 @@ This is a backend assignment project built for Upraised, simulating an API used 
 ## 📁 Project Structure
 
 ```
-.
-├── controllers/
-│   └── gadgetsController.js
-├── models/
-│   └── Gadget.js
-├── routes/
-│   └── gadgets.js
-├── tests/
-│   └── gadget.test.js
-├── app.js
-├── server.js
-├── .env
+src/ ├── controllers/ │ └── gadgetController.js # Handles gadget-related API logic ├── models/ │ └── Gadget.js # Gadget schema and model ├── routes/ │ └── gadgetRoutes.js # API routes for gadgets ├── middlewares/ │ └── errorHandler.js # Global error handling middleware ├── utils/ │ └── index.js # Utility functions └── app.js # Main application entry point
+
+
 └── README.md
 ```
 
@@ -201,18 +191,6 @@ POST /gadgets/:id/self-destruct
 
 ---
 
-## 🌍 Deployment (Render)
-
-1. Push your code to GitHub.
-2. Go to [https://render.com](https://render.com) → New Web Service.
-3. Connect your repo and set:
-   - **Build command**: `npm install`
-   - **Start command**: `npm start`
-4. Add environment variable:
-   - `MONGO_URI=your_mongodb_connection_string`
-
----
-
 ## 👨‍💻 Author
 
 **Raunak Agarwal**  
@@ -220,7 +198,6 @@ POST /gadgets/:id/self-destruct
 🔗 [LinkedIn](https://linkedin.com/in/raunak-agarwal-397467257)  
 💻 [GitHub](https://github.com/Raunakkkkk)  
 🌐 [Portfolio](https://raunakkkkk.github.io/Portfolio-Website/)
-
 ---
 
 ## 📜 License
