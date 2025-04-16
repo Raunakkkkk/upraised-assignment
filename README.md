@@ -1,4 +1,4 @@
-# 🕵️ IMF Gadget API — Backend Assignment
+# IMF Gadget API — Backend Assignment By Raunak Agarwal
 
 This is a backend assignment project built for Upraised.
 
