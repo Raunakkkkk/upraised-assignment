@@ -49,8 +49,9 @@ project-root/
 ├── package.json                    # Project dependencies and scripts
 ├── README.md                       # Project documentation
 └── node_modules/                   # Installed dependencies
----
+```
 
+---
 
 ## 🔗 API Endpoints
 
